@@ -1,0 +1,92 @@
+version: "3.1"
+services:
+    memcached-server:
+        image: 'memcached:1.6.9-alpine'
+        container_name: curlybytes-memcached-server
+        networks:
+            - vnet-backend-curlybytes
+
+    mysql-server:
+        image: 'mysql:8.0.19'
+        container_name: curlybytes-mysql-server
+        restart: always
+        working_dir: /application
+        volumes:
+            - '.:/application'
+            - curlybytes-mysql-data:/var/lib/mysql
+        environment:
+            - MYSQL_ROOT_PASSWORD=secret
+        ports:
+            - '64002:3306'
+        networks:
+            - vnet-backend-curlybytes
+    clickhouse:
+        image: 'yandex/clickhouse-server:latest'
+        container_name: curlybytes-clickhouse
+        networks:
+            - vnet-backend-curlybytes
+
+    webserver: 
+        image: 'nginx:1.21.6-alpine'
+        container_name: curlybytes-webserver
+        working_dir: /application
+        volumes:
+            - '.:/application'
+            - './scripts/phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf'
+        ports:
+            - '64000:80'
+        networks:
+            - vnet-backend-curlybytes
+
+    php-fpm:
+        build: scripts/phpdocker/php-fpm
+        working_dir: /application
+        volumes:
+            - '.:/application'
+            - './scripts/phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.4/fpm/conf.d/99-overrides.ini'
+        networks:
+            - vnet-backend-curlybytes
+
+    phpmyadmin-gui:
+        image: phpmyadmin/phpmyadmin:5.0.1
+        container_name: curlybytes-phpmyadmin-gui
+        restart: always
+        environment:
+            PMA_HOST: mysql-server
+            PMA_USER: root
+            PMA_PASSWORD: secret
+        ports:
+            - "64001:80"
+        depends_on:
+            - mysql-server
+        networks:
+            - vnet-backend-curlybytes
+
+    ngrok:
+        image: shkoliar/ngrok:latest
+        container_name: curlybytes-ngrok
+        working_dir: /application
+        volumes:
+            - '.:/application'
+        ports:
+            - 4551:4551
+        links:
+            - webserver
+        environment:
+            - PROTOCOL=http
+            - DOMAIN=host.docker.internal
+            - PORT=64000
+            - REGION=ap
+            - AUTH_TOKEN=xxxx
+            - DEBUG=true
+        depends_on:
+            - webserver
+        networks:
+            - vnet-backend-curlybytes
+
+networks:
+  vnet-backend-curlybytes:
+    driver: bridge
+
+volumes:
+  curlybytes-mysql-data:

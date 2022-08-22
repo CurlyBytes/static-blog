@@ -14,7 +14,7 @@ docker-compose up -d --build
 
 to open cli on the php  webserver
 ``
-docker exec -it staticblog_php-fpm bash
+docker exec -it static-blog_php-fpm_1 bash
 ``
 
 `` phpunit test in codeingnier
