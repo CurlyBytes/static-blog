@@ -11,7 +11,40 @@ user_guide_src/cilexer/dist/*
 user_guide_src/cilexer/pycilexer.egg-info/*
 
 #codeigniter 3
-application/logs/*
-!application/logs/index.html
-!application/logs/.htaccess
+src/logs/*
+!src/logs/index.html
+!src/logs/.htaccess
 /vendor/
+
+#docker 
+docker-compose.yml
+
+#NPM modules
+**/node_modules
+
+## Composer project
+/vendor/
+
+.env
+
+
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+.buildpath
+.settings/
+
+## Sublime Text cache files
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+
+
+## Phpunit test for CI3
+/tests/tests/
+/tests/results/
+bin/xdebug-filter.php
+.phpunit.result.cache
