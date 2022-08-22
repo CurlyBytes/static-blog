@@ -1,0 +1,31 @@
+#GitBlog配置文件，使用4个空格代替Tab
+---
+url: http://localhost:64000/
+title: Your-GitBlog
+subtitle: ttest
+theme: cube
+enableCache: true
+highlight: true
+mathjax: false
+katex: false
+youyan:
+baiduAnalytics:
+keywords: GitBlog,test,ttest,jockchou
+description: >
+    ttest
+version: 2.2
+author:
+    name: your-name
+    email: your-email@example.com
+    github: your-github
+    weibo: your-weibo
+    avatar:
+blog:
+    recentSize: 5
+    pageSize: 6
+    pageBarSize: 5
+    allBlogsForPage: false
+text:
+    title: ttest
+    intro: >
+          ttest!

@@ -20,7 +20,7 @@ docker exec -it static-blog_php-fpm_1 bash
 `` phpunit test in codeingnier
 php vendor/kenjis/ci-phpunit-test/install.php -a src -p public -t tests
 ``
-docker container inspect -f '{{ .NetworkSettings.Networks.maricopa_default.IPAddress }}' maricopa-mysql-server
+docker container inspect -f '{{ .NetworkSettings.Networks.curlybytes.IPAddress }}' curlybytes-mysql-server
 php index.php migrate help
 ## Test5
 

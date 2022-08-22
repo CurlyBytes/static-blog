@@ -49,6 +49,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'welcome';
-$route['404_override'] = '';
+$route['feed.xml'] 							= 'gitblog/feed';
+
+$route['page/(:num).html'] 					= 'gitblog/page/$1';
+
+$route['category/(:any)/page/(:num).html'] 	= 'gitblog/category/$1/$2';
+$route['category/(:any).html'] 				= 'gitblog/category/$1';
+
+$route['tags/(:any)/page/(:num).html'] 		= 'gitblog/tags/$1/$2';
+$route['tags/(:any).html'] 					= 'gitblog/tags/$1';
+
+$route['archive/(:any)/page/(:num).html'] 	= 'gitblog/archive/$1/$2';
+$route['archive/(:num).html']				= 'gitblog/archive/$1';
+
+$route['blog/(.+).html'] 					= 'gitblog/blog';
+
+$route['search'] 							= 'gitblog/search';
+
+$route['export'] 							= 'gitblog/exportSite';
+$route['wp2gb'] 							= 'Wp2Gb';
+
+$route['default_controller'] 				= 'gitblog';
+
+$route['404_override'] 						= 'gitblog/go404';
+
 $route['translate_uri_dashes'] = FALSE;
+
