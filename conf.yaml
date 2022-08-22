@@ -1,31 +1,29 @@
-#GitBlog配置文件，使用4个空格代替Tab
+#GitBlogConfiguration file, use 4 spaces instead of Tab
 ---
 url: http://localhost:64000/
-title: Your-GitBlog
-subtitle: ttest
-theme: cube
+title: Curly Bytes
+subtitle: Creating real solution in Software Development
+theme: cube    
 enableCache: true
 highlight: true
 mathjax: false
 katex: false
-youyan:
+youyan: 
 baiduAnalytics:
-keywords: GitBlog,test,ttest,jockchou
+keywords: CurlyBytes, Cocoy blog, Curly, Bytes, Software Development, DevSecOps, Career
 description: >
-    ttest
-version: 2.2
+    Creating real solution in Software Development with Curly Bytes
+version: 2.3
 author:
-    name: your-name
-    email: your-email@example.com
-    github: your-github
-    weibo: your-weibo
-    avatar:
+    name: Francisco Abayon
+    email: franzs.noyabas@gmail.com
+    github: https://github.com/curlybytes
 blog:
     recentSize: 5
     pageSize: 6
     pageBarSize: 5
     allBlogsForPage: false
 text:
-    title: ttest
+    title: About the Author
     intro: >
-          ttest!
+          Franciso wants to be called as Cocoy, currently loves to explore to Cloud implement practices such as AI, Microservices and even DevSecOps

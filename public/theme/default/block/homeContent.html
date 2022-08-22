@@ -3,21 +3,21 @@
         <div id="main" class="site-main" role="main">
     	{% if category %}
     	<header class="page-header">
-			<h1 class="page-title">分类：{{ category.name }}</h1>
+			<h1 class="page-title">Categories: {{ category.name }}</h1>
 		</header><!-- .page-header -->
     	{% elseif tag %}
     	<header class="page-header">
-			<h1 class="page-title">标签：{{ tag.name }}</h1>
+			<h1 class="page-title">Tags: {{ tag.name }}</h1>
 		</header><!-- .page-header -->
     	{% elseif yearMonth %}
     	<header class="page-header">
-			<h1 class="page-title">月份：{{ yearMonth.name }}</h1>
+			<h1 class="page-title">Archives: {{ yearMonth.name }}</h1>
 		</header><!-- .page-header -->
     	{% endif %}
     	
         {% for blog in blogList %}
         	{% if blog.title %}
-        	{% include "public/content/blog.html" %}
+        	{% include "blog/blog.html" %}
         	{% endif %}
         {% endfor %}
         
