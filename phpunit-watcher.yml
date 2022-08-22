@@ -1,0 +1,28 @@
+watch:
+  directories:
+    - src/controllers
+    - src/helpers
+    - src/hooks
+    - src/language
+    - src/libraries
+    - src/service
+    - src/models
+    - tests
+  exclude:
+    - vendor 
+    - src/third_party
+    - scripts
+    - docs
+  fileMask: '*.php'
+  ignoreDotFiles: true
+  ignoreVCS: true
+  ignoreVCSIgnored: false
+
+notifications:
+  passingTests: true
+  failingTests: true
+phpunit:
+  binaryPath: vendor/bin/phpunit
+  arguments: '-vvv --testdox --colors=always'
+  timeout: 180
+hideManual: true

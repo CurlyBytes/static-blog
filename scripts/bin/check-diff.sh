@@ -10,5 +10,5 @@
 cd `dirname $0`
 cd ..
 
-diff -urN vendor/codeigniter/framework/application application
+diff -urN vendor/codeigniter/framework/application src
 diff -u vendor/codeigniter/framework/index.php public/index.php
