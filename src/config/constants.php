@@ -1,5 +1,23 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+/*
+|--------------------------------------------------------------------------
+| Custom Constant
+|--------------------------------------------------------------------------
+|
+| The application constant setup and configuration
+|
+*/
+define('GB_CONF_FILE', "conf.yaml");
+define('GB_DATA_CACHE_TIME', 60 * 60);
+define('GB_PAGE_CACHE_TIME', 30 * 60);
+define('GB_SITE_DIR', "./_site");
+
+
+define('GB_BLOG_CACHE', "all_blog.gb");
+define('GB_TAG_CACHE', "all_tag.gb");
+define('GB_CATEGORY_CACHE', "all_category.gb");
+define('GB_ARCHIVE_CACHE', "all_archive.gb");
 
 /*
 |--------------------------------------------------------------------------
