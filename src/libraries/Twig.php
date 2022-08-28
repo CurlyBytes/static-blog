@@ -1,6 +1,6 @@
 <?php  if (!defined('BASEPATH')) exit('No direct script access allowed');
 
-require_once APPPATH . 'third_party/Twig/Autoloader.php';
+
 
 class Twig {
 	private $loader;
@@ -10,13 +10,12 @@ class Twig {
     function __construct($params) {
 		$this->CI = & get_instance();
 		$cachePath = APPPATH . 'cache';
-		
-		Twig_Autoloader::register();
-		$this->loader = new Twig_Loader_Filesystem(dirname(APPPATH) . '/public/theme/' . $params['theme']);
+
+		$this->loader = new \Twig\Loader\FilesystemLoader(dirname(APPPATH) . '/public/theme/' . $params['theme']);
 		if(!is_writable($cachePath) || ENVIRONMENT == "development") {
-			$this->twig = new Twig_Environment($this->loader, array('auto_reload' => true));          
+			$this->twig = new \Twig\Environment($this->loader, array('auto_reload' => true));          
         } else {
-        	$this->twig = new Twig_Environment($this->loader, array('cache' => $cachePath, 'auto_reload' => true));                      
+        	$this->twig = new \Twig\Environment($this->loader, array('cache' => $cachePath, 'auto_reload' => true));                      
         }
 	}
 	

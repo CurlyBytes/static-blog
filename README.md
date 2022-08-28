@@ -20,6 +20,12 @@ docker exec -it static-blog_php-fpm_1 bash
 `` phpunit test in codeingnier
 php vendor/kenjis/ci-phpunit-test/install.php -a src -p public -t tests
 ``
+
+
+====
+Export to static site 
+php public/index.php Gitblog exportSite
+
 docker container inspect -f '{{ .NetworkSettings.Networks.curlybytes.IPAddress }}' curlybytes-mysql-server
 php index.php migrate help
 ## Test5
@@ -30,11 +36,11 @@ If you update the autoload psr-4, dont forget to add composer dump-autoload
 
 ``
 check of mysql server ip address
-docker inspect maricopa-mysql-server
-docker inspect maricopa_php-fpm
-docker inspect maricopa-webserver
-docker inspect maricopa-memcached-server
-maricopa-ngrok
+docker inspect curlybytes-mysql-server
+docker inspect curlybytes_php-fpm
+docker inspect curlybytes-webserver
+docker inspect curlybytes-memcached-server
+curlybytes-ngrok
 ``
 to add secret first docker swarm init  
 to create a secret 
@@ -50,6 +56,6 @@ https://codecanyon.net/item/mlmlab-multilevel-marketing-platform/31801518
 172.23.0.3 clickhouse
 172.23.0.4 mysql server
 172.23.0.5 webserver
-172.23.0.6 maricopa_php-fpm_1
+172.23.0.6 curlybytes_php-fpm_1
 172.23.0.7 phpmyadmin
 172.23.0.8 ngrok

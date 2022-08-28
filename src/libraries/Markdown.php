@@ -1,8 +1,5 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed'); 
 
-require APPPATH . 'third_party/parsedown/Parsedown.php';
-require APPPATH . 'third_party/parsedown/ParsedownExtra.php';
-
 class Markdown {
 
 	//所有的博客文章
