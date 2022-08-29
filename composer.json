@@ -14,13 +14,17 @@
 		],
 		"check-watch": [
 			"phpunit-watcher watch"
-		]
+		],
+		"export-site": [
+			"php public/index.php Gitblog exportSite"
+		]	
 	  },
 	  "scripts-descriptions": {
 		"check-xdebug": "use this to invoke xdebug in phpunit.",
 		"check-phpdbg": "use this to invoke phpdbg in phpunit.",
 		"check-pcov": "use this to invoke pcov in phpunit.",
-		"check-watch": "use this to auto run phpunit tests scripts"
+		"check-watch": "use this to auto run phpunit tests scripts",
+		"export-site": "use this to export and generate static pages"
 	  },
 	"require": {
 		"php": ">=5.3.2",

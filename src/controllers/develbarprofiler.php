@@ -32,7 +32,7 @@
  * @since    Version 0.1
  * @filesource
  */
-class DevelBarProfiler extends Curlybytes_Controller
+class DevelBarProfiler extends CI_Controller
 {
 
     /**
